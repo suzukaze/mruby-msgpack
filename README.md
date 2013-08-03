@@ -15,7 +15,7 @@ I test MessagePack for mruby in mac OSX 10.8.4. In the future it will work in Wi
 
 1. Download MessagePack for mruby at the command prompt:
 
-        git clone https://github.com/suzukaze/mruby-msgpack.git
+    git clone https://github.com/suzukaze/mruby-msgpack.git
 
 2. Add config.gem line to `build_config.rb`
 ```ruby
@@ -26,13 +26,13 @@ MRuby::Build.new do |conf|
 end
 ```
 
-3. Test:
+3. Test at the command prompt:
 
-        rake test
+    rake test
 
-4. Build:
+4. Build at the command prompt:
 
-    	rake
+    rake
 
 
 
