@@ -146,11 +146,7 @@ String_to_msgpack(mrb_state *mrb, mrb_value self)
   mrb_value *argv;
   int argc; /* Number of arguments */
 
-  puts("String_to_msgpack in core_ext.c\n");
   mrb_get_args(mrb, "*", &argv, &argc);
-
-  printf("argc=%d\n", argc);
-
   ENSURE_PACKER(mrb, argc, argv, packer, pk);
   msgpack_packer_write_string_value(mrb, pk, self);
   return packer;
