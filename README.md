@@ -22,7 +22,7 @@ I test MessagePack for mruby in mac OSX 10.8.4. In the future it will work in Wi
 MRuby::Build.new do |conf|
 
   # ...(snip)...
-  config.gem :git => 'https://github.com/suzukaze/mruby-msgpack.git'
+  conf.gem :git => 'https://github.com/suzukaze/mruby-msgpack.git'
 end
 ```
 
