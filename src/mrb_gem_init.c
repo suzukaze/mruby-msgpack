@@ -16,6 +16,7 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
+/* rbinit.c => mrb_gem_init.c */
 #include "mruby.h"
 #include "mruby/string.h"
 
@@ -25,7 +26,7 @@
 #include "core_ext.h"
 
 void
-mrb_msgpack_gem_init(mrb_state* mrb) {
+mrb_mruby_msgpack_gem_init(mrb_state* mrb) {
   struct RClass *mMessagePack = mrb_define_module(mrb, "MessagePack");
 
   //MessagePack_Buffer_module_init(mrb, mMessagePack);
@@ -35,6 +36,6 @@ mrb_msgpack_gem_init(mrb_state* mrb) {
 }
 
 void
-mrb_msgpack_gem_final(mrb_state* mrb) {
-  /* finalizer */
+mrb_mruby_msgpack_gem_final(mrb_state* mrb) {
+  /* Finalizer */
 }
