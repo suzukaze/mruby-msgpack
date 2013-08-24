@@ -8,7 +8,7 @@ MessagePack.unpack(msg)     #=> [1, 2, 3]
 
 This is early vesion. Please check the methods that work in test foloder.
 
-## Plathome
+## Platform
 
 I test MessagePack for mruby in mac OSX 10.8.4. In the future it will work in Windows and Linux OS.
 
