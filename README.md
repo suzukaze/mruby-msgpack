@@ -1,3 +1,4 @@
+# mruby-msgpack   [![Build Status](https://travis-ci.org/suzukaze/mruby-msgpack.png?branch=master)](https://travis-ci.org/suzukaze/mruby-msgpack)
 ## Welcome to MessagePack for mruby
 
 MessagePack for mruby is MessagePack implimented in mruby language.
