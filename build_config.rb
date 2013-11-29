@@ -12,8 +12,7 @@ MRuby::Build.new do |conf|
   # conf.gem 'examples/mrbgems/c_and_ruby_extension_example'
   # conf.gem :github => 'masuidrive/mrbgems-example', :branch => 'master'
   # conf.gem :git => 'git@github.com:masuidrive/mrbgems-example.git', :branch => 'master', :options => '-v'
-  conf.gem :github => 'suzukaze/mruby-msgpack', :branch => 'master'
-
+  conf.gem '../mruby-msgpack'
   # include the default GEMs
   conf.gembox 'default'
 
