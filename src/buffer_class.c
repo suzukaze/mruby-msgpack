@@ -118,7 +118,7 @@ MessagePack_Buffer_initialize(mrb_state* mrb, msgpack_buffer_t* b, mrb_value io,
 #if 0
   if (!mrb_nil_p(options)) {
     mrb_value v;
-        v = rb_hash_aref(options, ID2SYM(mrb_intern2("read_reference_threshold")));
+        v = rb_hash_aref(options, ID2SYM(mrb_intern("read_reference_threshold")));
         if (!mrb_nil_p(v)) {
             msgpack_buffer_set_read_reference_threshold(b, NUM2ULONG(v));
         }
@@ -534,11 +534,11 @@ static mrb_value Buffer_write_to(mrb_value self, mrb_value io)
 
 void MessagePack_Buffer_module_init(mrb_state *mrb, struct RClass *mMessagePack)
 {
-  s_read = mrb_intern2(mrb, "read", 4);
-  s_readpartial = mrb_intern2(mrb, "readpartial", 7);
-  s_write = mrb_intern2(mrb, "write", 5);
-  s_append = mrb_intern2(mrb, "<<", 2);
-  s_close = mrb_intern2(mrb, "close", 5);
+  s_read = mrb_intern(mrb, "read", 4);
+  s_readpartial = mrb_intern(mrb, "readpartial", 7);
+  s_write = mrb_intern(mrb, "write", 5);
+  s_append = mrb_intern(mrb, "<<", 2);
+  s_close = mrb_intern(mrb, "close", 5);
 
   msgpack_buffer_static_init();
 

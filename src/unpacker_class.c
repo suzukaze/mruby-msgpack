@@ -231,19 +231,19 @@ Unpacker_peek_next_type(mrb_state *mrb, mrb_value self)
 
   switch ((enum msgpack_unpacker_object_type) r) {
   case TYPE_NIL:
-    return mrb_intern2(mrb, "nil", 3);
+    return mrb_intern(mrb, "nil", 3);
   case TYPE_BOOLEAN:
-    return mrb_intern2(mrb, "boolean", 7);
+    return mrb_intern(mrb, "boolean", 7);
   case TYPE_INTEGER:
-    return mrb_intern2(mrb, "integer", 7);
+    return mrb_intern(mrb, "integer", 7);
   case TYPE_FLOAT:
-    return mrb_intern2(mrb, "float", 5);
+    return mrb_intern(mrb, "float", 5);
   case TYPE_RAW:
-    return mrb_intern2(mrb, "raw", 3);
+    return mrb_intern(mrb, "raw", 3);
   case TYPE_ARRAY:
-    return mrb_intern2(mrb, "array", 5);
+    return mrb_intern(mrb, "array", 5);
   case TYPE_MAP:
-    return mrb_intern2(mrb, "map", 3);
+    return mrb_intern(mrb, "map", 3);
   default:
     puts("logically unknown type dfsadf\n");
     //mrb_raisef(mrb, eUnpackError, "logically unknown type %d", r);
