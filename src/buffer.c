@@ -42,7 +42,7 @@ msgpack_buffer_static_init(mrb_state* mrb)
   msgpack_rmem_init(mrb, &s_rmem);
 #endif
 #ifndef HAVE_RB_STR_REPLACE
-  s_replace = mrb_intern(mrb, "replace", 7);
+  s_replace = mrb_intern_lit(mrb, "replace");
 #endif
 
 #ifdef COMPAT_HAVE_ENCODING

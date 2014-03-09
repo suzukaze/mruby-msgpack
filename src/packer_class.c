@@ -303,9 +303,9 @@ static mrb_value MessagePack_pack_module_method(mrb_state *mrb, mrb_value self)
 
 void MessagePack_Packer_module_init(mrb_state* mrb, struct RClass *mMessagePack)
 {
-  sym_pack_data = mrb_intern_cstr(mrb, "pack_data");
+  sym_pack_data = mrb_intern_lit(mrb, "pack_data");
   //s_to_msgpack = mrb_intern_cstr(mrb, "to_msgpack");
-  s_write = mrb_intern_cstr(mrb, "write");
+  s_write = mrb_intern_lit(mrb, "write");
 
   cMessagePack_Packer = mrb_define_class_under(mrb, mMessagePack, "Packer", mrb->object_class);
 

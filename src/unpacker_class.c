@@ -405,7 +405,7 @@ MessagePack_Unpacker_module_init(mrb_state *mrb, struct RClass *mMessagePack)
 {
   msgpack_unpacker_static_init(mrb);
 
-  sym_unpacker_data = mrb_intern_cstr(mrb, "unpacker_data");
+  sym_unpacker_data = mrb_intern_lit(mrb, "unpacker_data");
 
   cMessagePack_Unpacker = mrb_define_class_under(mrb, mMessagePack, "Unpacker", mrb->object_class);
 

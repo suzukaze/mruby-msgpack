@@ -534,11 +534,11 @@ static mrb_value Buffer_write_to(mrb_value self, mrb_value io)
 
 void MessagePack_Buffer_module_init(mrb_state *mrb, struct RClass *mMessagePack)
 {
-  s_read = mrb_intern(mrb, "read", 4);
-  s_readpartial = mrb_intern(mrb, "readpartial", 7);
-  s_write = mrb_intern(mrb, "write", 5);
-  s_append = mrb_intern(mrb, "<<", 2);
-  s_close = mrb_intern(mrb, "close", 5);
+  s_read = mrb_intern_lit(mrb, "read");
+  s_readpartial = mrb_intern_lit(mrb, "readpartial");
+  s_write = mrb_intern_lit(mrb, "write");
+  s_append = mrb_intern_lit(mrb, "<<");
+  s_close = mrb_intern_lit(mrb, "close");
 
   msgpack_buffer_static_init();
 
