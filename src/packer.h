@@ -361,7 +361,7 @@ static inline void msgpack_packer_write_symbol_value(mrb_state *mrb, msgpack_pac
   //const char* name = rb_id2name(SYM2ID(v));
   //const char* name = mrb_sym_to_s(mrb, v);
   /* Actual return type of mrb_sym2name_len is size_t */
-  unsigned long len = 0L;
+  mrb_int len = 0L;
   const char* name = mrb_sym2name_len(mrb, mrb_symbol(v), &len);
 
   //unsigned long len = strlen(name);
