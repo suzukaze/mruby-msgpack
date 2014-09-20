@@ -36,6 +36,8 @@ end
 
         rake
 
+## msgpack-ruby commit
+mruby-msgpack is based on [msgpack-ruby](https://github.com/msgpack/msgpack-ruby)(`a7c2dc34ef69c9132167e38009baa8420c460c9b`)
 
 ## Contributing
 
