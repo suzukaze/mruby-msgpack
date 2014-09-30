@@ -214,5 +214,15 @@ assert('MessagePack.unpack', 'FixMap {"a" => 1}') do
   assert_equal({"a" => 1}, msg)
 end
 
+assert('MessagePack.unpack', 'str8 "a" * 32') do
+  msg = MessagePack.unpack("\xd9\x20" + "\x61" * 32)
+  assert_equal("a" * 32, msg)
+end
+
+assert('MessagePack.unpack', 'str8 "a" * 255') do
+  msg = MessagePack.unpack("\xd9\xff" + "\x61" * 255)
+  assert_equal("a" * 255, msg)
+end
+
 # End -- MessagePack-mruby --
 
