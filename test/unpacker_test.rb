@@ -163,6 +163,16 @@ assert('MessagePack.unpack', 'Catergory-2 int32 -65536') do
   assert_equal(-65536, msg)
 end
 
+assert('MessagePack.unpack', 'Catergory-3 raw8 "a" * 32') do
+  msg = MessagePack.unpack("\xd9\x20" + "\x61" * 32)
+  assert_equal("a" * 32, msg)
+end
+
+assert('MessagePack.unpack', 'Catergory-3 raw8 "a" * 255') do
+  msg = MessagePack.unpack("\xd9\xff" + "\x61" * 255)
+  assert_equal("a" * 255, msg)
+end
+
 assert('MessagePack.unpack', 'Catergory-3 raw16 "a" * 32') do
   msg = MessagePack.unpack("\xda\x00\x20" + "\x61" * 32)
   assert_equal("a" * 32, msg)
@@ -212,16 +222,6 @@ end
 assert('MessagePack.unpack', 'FixMap {"a" => 1}') do
   msg = MessagePack.unpack("\x81\xa1\x61\x01")
   assert_equal({"a" => 1}, msg)
-end
-
-assert('MessagePack.unpack', 'str8 "a" * 32') do
-  msg = MessagePack.unpack("\xd9\x20" + "\x61" * 32)
-  assert_equal("a" * 32, msg)
-end
-
-assert('MessagePack.unpack', 'str8 "a" * 255') do
-  msg = MessagePack.unpack("\xd9\xff" + "\x61" * 255)
-  assert_equal("a" * 255, msg)
 end
 
 # End -- MessagePack-mruby --
