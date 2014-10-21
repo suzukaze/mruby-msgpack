@@ -444,7 +444,7 @@ read_primitive(mrb_state *mrb, msgpack_unpacker_t* uk)
         READ_CAST_BLOCK_OR_RETURN_EOF(mrb, cb, uk, 1);
         uint8_t count = cb->u8;
         if (count == 0) {
-            return object_complete_string(uk, mrb_str_buf_new(mrb, 0));
+          return object_complete_string(uk, mrb_str_buf_new(mrb, 0));
         }
         /* read_raw_body_begin sets uk->reading_raw */
         uk->reading_raw_remaining = count;
@@ -456,7 +456,7 @@ read_primitive(mrb_state *mrb, msgpack_unpacker_t* uk)
         READ_CAST_BLOCK_OR_RETURN_EOF(mrb, cb, uk, 2);
         uint16_t count = _msgpack_be16(cb->u16);
         if (count == 0) {
-            return object_complete_string(uk, mrb_str_buf_new(mrb, 0));
+          return object_complete_string(uk, mrb_str_buf_new(mrb, 0));
         }
         /* read_raw_body_begin sets uk->reading_raw */
         uk->reading_raw_remaining = count;
@@ -480,19 +480,19 @@ read_primitive(mrb_state *mrb, msgpack_unpacker_t* uk)
           READ_CAST_BLOCK_OR_RETURN_EOF(mrb, cb, uk, 2);
           uint16_t count = _msgpack_be16(cb->u16);
           if (count == 0) {
-              return object_complete(uk, mrb_ary_new(mrb));
+            return object_complete(uk, mrb_ary_new(mrb));
           }
           return _msgpack_unpacker_stack_push(uk, STACK_TYPE_ARRAY, count, mrb_ary_new_capa(mrb, count));
         }
 
         case 0xdd:  /* array 32 */
           {
-              READ_CAST_BLOCK_OR_RETURN_EOF(mrb, cb, uk, 4);
-              uint32_t count = _msgpack_be32(cb->u32);
-              if(count == 0) {
-                  return object_complete(uk, mrb_ary_new(mrb));
-              }
-              return _msgpack_unpacker_stack_push(uk, STACK_TYPE_ARRAY, count, mrb_ary_new_capa(mrb, count));
+            READ_CAST_BLOCK_OR_RETURN_EOF(mrb, cb, uk, 4);
+            uint32_t count = _msgpack_be32(cb->u32);
+            if(count == 0) {
+              return object_complete(uk, mrb_ary_new(mrb));
+            }
+            return _msgpack_unpacker_stack_push(uk, STACK_TYPE_ARRAY, count, mrb_ary_new_capa(mrb, count));
           }
 
         case 0xde:  /* map 16 */
@@ -500,7 +500,7 @@ read_primitive(mrb_state *mrb, msgpack_unpacker_t* uk)
             READ_CAST_BLOCK_OR_RETURN_EOF(mrb, cb, uk, 2);
             uint16_t count = _msgpack_be16(cb->u16);
             if (count == 0) {
-                return object_complete(uk, mrb_hash_new(mrb));
+              return object_complete(uk, mrb_hash_new(mrb));
             }
             return _msgpack_unpacker_stack_push(uk, STACK_TYPE_MAP_KEY, count*2, mrb_hash_new(mrb));
           }
@@ -510,7 +510,7 @@ read_primitive(mrb_state *mrb, msgpack_unpacker_t* uk)
             READ_CAST_BLOCK_OR_RETURN_EOF(mrb, cb, uk, 4);
             uint32_t count = _msgpack_be32(cb->u32);
             if (count == 0) {
-                return object_complete(uk, mrb_hash_new(mrb));
+              return object_complete(uk, mrb_hash_new(mrb));
             }
             return _msgpack_unpacker_stack_push(uk, STACK_TYPE_MAP_KEY, count*2, mrb_hash_new(mrb));
           }
