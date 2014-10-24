@@ -194,7 +194,6 @@ void MessagePack_core_ext_module_init(mrb_state* mrb)
   mrb_define_method(mrb, mrb->true_class,  "to_msgpack", TrueClass_to_msgpack, MRB_ARGS_ANY());
   mrb_define_method(mrb, mrb->false_class, "to_msgpack", FalseClass_to_msgpack, MRB_ARGS_ANY());
   mrb_define_method(mrb, mrb->fixnum_class, "to_msgpack", Fixnum_to_msgpack, MRB_ARGS_ANY());
-  //mrb_define_method(mrb, rb_cBignum, "to_msgpack", Bignum_to_msgpack, -1);
   mrb_define_method(mrb, mrb->float_class,  "to_msgpack", Float_to_msgpack, MRB_ARGS_ANY());
   mrb_define_method(mrb, mrb->string_class, "to_msgpack", String_to_msgpack, MRB_ARGS_ANY());
   mrb_define_method(mrb, mrb->array_class,  "to_msgpack", Array_to_msgpack, MRB_ARGS_ANY());
