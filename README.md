@@ -7,7 +7,7 @@ msg = [1, 2, 3].to_msgpack  #=> "\x93\x01\x02\x03"
 MessagePack.unpack(msg)     #=> [1, 2, 3]
 ```
 
-This is early vesion. Please check the methods that work in test foloder.
+This is early vesion. Please check the methods that work in test folder.
 
 ## Platform
 
